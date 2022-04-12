@@ -1,6 +1,7 @@
 ### Python template
 .idea/*
-
+.env.dist
+/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -108,7 +109,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+.env.dist
 .venv
 env/
 venv/
