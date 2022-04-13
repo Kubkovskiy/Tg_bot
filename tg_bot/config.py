@@ -7,8 +7,8 @@ from environs import Env
 @dataclass
 class TgBot:
     token: str
-    admin_list: List[int]
-    user_redis: bool
+    admin_ids: List[int]
+    use_redis: bool
 
 
 @dataclass
@@ -38,7 +38,7 @@ def load_config(path: str = None):
         tg_bot=TgBot(
             token=env.str("BOT_TOKEN"),
             admin_ids=list(map(int, env.list("ADMINS"))),
-            user_redis=env.bool("USE_REDIS")),
+            use_redis=env.bool("USE_REDIS")),
         db=DbConfig(
             host=env.str("DB_HOST"),
             password=env.str("DB_PASS"),
